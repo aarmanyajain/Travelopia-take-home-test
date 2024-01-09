@@ -1,0 +1,399 @@
+/* Name: Aarmanya Jain
+Note: Firstly I have made the mobile resolution and then the desktop resolution as future enhancement. So basically its mobile to desktop view.  I have used css checkbox to use the functionality. */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  /* font-family: var(--font-family-display); */
+  background-color: white;
+  margin: 0;
+}
+
+.mobile-container {
+  width: 80%;
+  max-width: 360px;
+  height: 100vh;
+  margin: 10vh auto;
+  padding: 10px;
+  border: 2px solid rgb(255, 255, 255);
+  display: flex;
+  flex-direction: column;
+  /* justify-content: center; */
+  overflow-y: auto;
+}
+
+.mobile-container .logo {
+  color: #404747;
+  font-style: italic;
+}
+
+.navbar {
+  /* position: fixed; */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1px 5px;
+  background-color: white;
+  color: black;
+  border-bottom: 1px solid rgb(126, 126, 126);
+}
+
+.navbar .logo {
+  flex: 1;
+}
+
+.navbar .logo span {
+  font-weight: bold;
+  font-size: 1.2em;
+}
+
+.navbar .icons a {
+  color: black;
+  margin-left: 15px;
+  text-decoration: none;
+}
+
+.navbar img {
+  width: 30px;
+}
+
+.word-container {
+  margin-left: -200px;
+}
+
+.word-up,
+.word-down {
+  display: block;
+}
+
+.word-up {
+  margin-bottom: -5px;
+  font-weight: bold;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+  color: #6a7575;
+}
+
+.word-down {
+  font-style: italic;
+  color: #6a7575;
+}
+.main-content {
+  position: relative;
+  text-align: center;
+  margin-top: 25px;
+}
+
+.main-image {
+  /* margin-top: 30px; */
+  width: 100%;
+  max-width: 100%;
+  height: 150px;
+}
+
+.overlay {
+  position: absolute;
+  top: 55%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 20px;
+  color: white;
+  width: 80%;
+  max-width: 600px;
+  border-radius: 10px;
+}
+
+.overlay h1 {
+  font-size: 20px;
+  margin-bottom: 5px;
+}
+
+.overlay p {
+  font-size: 12px;
+  line-height: 1.4;
+}
+
+.content-long {
+  display: none;
+}
+
+/* Show More/Show Less functionality using checkbox hack */
+.show-more-toggle {
+  display: none;
+}
+
+.show-more-label {
+  display: inline-block;
+  color: rgb(16, 173, 194);
+  cursor: pointer;
+  margin-left: 120px;
+  margin-top: 10px;
+  font-weight: bolder;
+}
+
+.show-more-label i {
+  color: rgb(16, 173, 194);
+}
+
+.show-less-label {
+  display: inline-block;
+  color: rgb(16, 173, 194);
+  cursor: pointer;
+  margin-left: 120px;
+  font-weight: bolder;
+}
+
+.show-more-toggle:checked ~ .content-short {
+  display: none;
+}
+
+.show-more-toggle:checked ~ .content-long {
+  display: block;
+}
+
+.show-more-toggle:checked ~ .show-more-label {
+  display: none;
+}
+
+.show-more-toggle:checked ~ .show-less-label {
+  display: inline-block;
+}
+
+.additional-content h2 {
+  color: #6a7575;
+  font-family: var(--font-family-display);
+}
+
+.additional-content p {
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+  color: #6a7575;
+  font-size: 15px;
+  margin-top: 8px;
+}
+
+.additional-content {
+  position: relative;
+}
+
+.call-box {
+  display: block;
+  position: absolute;
+  left: 0;
+  right: 0;
+  background-color: white;
+  border: 1px solid #dddbdb;
+  padding: 15px;
+  border-radius: 5px;
+}
+
+.call-box p {
+  color: #6a7575;
+}
+.call-box h4 {
+  color: rgb(16, 173, 194);
+}
+
+.email-box {
+  display: block;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgb(236, 236, 236);
+  /* border: 1px solid #918c8c; */
+  padding: 20px;
+  border-radius: 5px;
+}
+
+.email-box p {
+  color: rgb(16, 173, 194);
+  font-weight: bolder;
+}
+
+@media (min-width: 768px) {
+  /* For larger devices */
+  .mobile-container {
+    max-width: 768px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+
+  .main-image {
+    /* margin-top: 30px; */
+    width: 100%;
+    max-width: 100%;
+    height: 350px;
+  }
+  .overlay {
+    position: absolute;
+    top: 70%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 20px;
+    color: white;
+    width: 100%;
+    max-width: 400px;
+    border-radius: 5px;
+  }
+  .show-more-label {
+    display: inline-block;
+    color: rgb(16, 173, 194);
+    cursor: pointer;
+    margin-left: 300px;
+    margin-top: 10px;
+    font-weight: bolder;
+  }
+  .show-less-label {
+    display: inline-block;
+    color: rgb(16, 173, 194);
+    cursor: pointer;
+    margin-left: 300px;
+    font-weight: bolder;
+  }
+  .word-container {
+    margin-left: -1000px;
+  }
+}
+@media (min-width: 1024px) {
+  /* For larger desktops */
+
+  .mobile-container {
+    width: 100%;
+    max-width: 100%;
+    padding: 10;
+  }
+
+  .overlay {
+    position: absolute;
+    top: 70%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 20px;
+    color: white;
+    width: 100%;
+    max-width: 500px;
+    border-radius: 5px;
+  }
+
+  .overlay h1 {
+    font-size: 40px;
+    margin-bottom: 5px;
+  }
+
+  .overlay p {
+    font-size: 14px;
+    line-height: 1.4;
+  }
+
+  .main-image {
+    /* margin-top: 30px; */
+    width: 100%;
+    max-width: 100%;
+    height: 350px;
+  }
+
+  .show-more-label {
+    display: inline-block;
+    color: rgb(16, 173, 194);
+    cursor: pointer;
+    margin-left: 500px;
+    margin-top: 10px;
+    font-weight: bolder;
+  }
+
+  .show-less-label {
+    display: inline-block;
+    color: rgb(16, 173, 194);
+    cursor: pointer;
+    margin-left: 500px;
+    font-weight: bolder;
+  }
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1px 5px;
+    background-color: white;
+    color: black;
+    border-bottom: 1px solid black;
+  }
+  .email-box p i {
+    margin-left: 1000px;
+    color: rgb(16, 173, 194);
+    font-weight: bolder;
+  }
+  .word-container {
+    margin-left: -1670px;
+  }
+}
+@media screen and (max-width: 375px) {
+  /* Adjustments for smaller screens */
+
+  .mobile-container {
+    width: 100%;
+    max-width: 100%;
+    padding: 10;
+  }
+  .overlay {
+    position: absolute;
+    top: 55%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 20px;
+    color: white;
+    width: 80%;
+    max-width: 375px;
+    border-radius: 10px;
+  }
+  .word-container {
+    margin-left: -300px;
+  }
+  .show-more-label {
+    display: inline-block;
+    color: rgb(16, 173, 194);
+    cursor: pointer;
+    margin-left: 130px;
+    margin-top: 10px;
+    font-weight: bolder;
+  }
+
+  .show-less-label {
+    display: inline-block;
+    color: rgb(16, 173, 194);
+    cursor: pointer;
+    margin-left: 130px;
+    font-weight: bolder;
+  }
+  .overlay {
+    position: absolute;
+    top: 55%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 10px;
+    color: white;
+    width: 90%;
+    max-width: 700px;
+    border-radius: 10px;
+  }
+  .navbar {
+    /* position: fixed; */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1px 5px;
+    background-color: white;
+    color: black;
+    border-bottom: 1px solid black;
+    margin-top: -10px;
+  }
+}
